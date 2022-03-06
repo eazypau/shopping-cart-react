@@ -3,7 +3,7 @@
 </div>
 
 # E-commerce shopping cart
-A static E-Commerce website to demonstrate the flow of a typical user purchase
+A static E-Commerce website to demonstrate the flow of a user purchase
 
 ## Technologies used
 - [React](https://v3.nuxtjs.org/) 
