@@ -1,0 +1,119 @@
+@use "../utilities/utilities.scss" as *;
+
+.modalContainer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	z-index: 10;
+	background-color: $transparent-color;
+}
+
+.modalContainer .modal {
+	width: 350px;
+	height: auto;
+	opacity: 1;
+	position: relative;
+	background-color: $light-color;
+	border-radius: 10rem;
+	overflow: hidden;
+
+	@include for-laptop-up {
+		width: 450px;
+	}
+}
+
+.modal .closeBtn {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-left: 7rem;
+	margin-top: 7rem;
+	cursor: pointer;
+}
+
+:hover.closeBtn {
+	opacity: 0.6;
+}
+
+.modal .modaImgContainer {
+	height: 300px;
+	padding: 15rem;
+	display: flex;
+	justify-content: center;
+}
+
+.modal .modalTextDetails {
+	padding: 25rem;
+	background-color: $secondary-dark-color;
+	color: $light-color;
+}
+
+.modalTextDetails div .modalPrice {
+	margin-top: 10px;
+	margin-bottom: 0;
+	font-size: 18rem;
+
+	@include for-tablet-portrait-up {
+		font-size: 24rem;
+	}
+}
+
+.modalTextDetails div .modalItemName {
+	margin-top: 0;
+	margin-bottom: 15rem;
+	font-weight: 500;
+	font-size: 24rem;
+
+	@include for-tablet-portrait-up {
+		font-size: 32rem;
+	}
+}
+
+.modalTextDetails .inputAndTotal {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.inputAndTotal div .qtyInput {
+	width: 70rem;
+	height: 25rem;
+	padding: 1rem 3rem 1rem 3rem;
+	text-align: center;
+}
+
+.inputAndTotal .totalPrice {
+	font-size: 18rem;
+
+	@include for-tablet-portrait-up {
+		font-size: 24rem;
+	}
+}
+
+.modalTextDetails .addToCartBtn {
+	margin-top: 17px;
+	background-color: $grid-color;
+	border: none;
+	padding: 5rem 10rem 5rem 10rem;
+	border-radius: 5rem;
+	font-weight: 500;
+
+	font-size: 15rem;
+
+	@include for-tablet-portrait-up {
+		font-size: 20rem;
+	}
+}
+
+:hover.addToCartBtn {
+	cursor: pointer;
+}
+
+:active.addToCartBtn {
+	box-shadow: 0 2px $secondary-dark-color;
+	transform: translateY(2px);
+}

@@ -1,0 +1,89 @@
+.cartItemContainer {
+	display: flex;
+	margin-top: 7rem;
+	border: 1rem solid $grid-color;
+	border-radius: 10rem;
+	overflow: hidden;
+	padding: 7rem 0 7rem 0;
+}
+
+.cartItemImgContainer {
+	width: 40%;
+	height: 135rem;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+
+	@include for-tablet-portrait-up {
+		width: 30%;
+	}
+	@include for-laptop-up {
+		height: 150rem;
+		width: 30%;
+	}
+}
+
+.cartItemContainer .itemDetailsContainer {
+	flex-grow: 1;
+	padding-left: 20rem;
+	padding-right: 20rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+}
+
+.itemDetailsContainer div p {
+	font-size: 14rem;
+
+	
+	@include for-tablet-portrait-up {
+		font-size: 16rem;
+	}
+}
+
+.itemDetailsContainer div p .discountedLabel {
+	font-size: 10px;
+	color: $medium-text-color;
+}
+
+.itemDetailsContainer .trashIcon {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin-right: 7rem;
+	margin-top: 1rem;
+	cursor: pointer;
+}
+
+:hover.trashIcon {
+	color: #dc2626;
+}
+
+.cartItemContainer .itemDetailsContainer .itemInputAndTotal {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+}
+
+.itemInputAndTotal .quantityInput {
+	width: 30rem;
+	padding: 1rem 3rem 1rem 3rem;
+	text-align: center;
+	font-size: 12rem;
+
+	@include for-tablet-portrait-up {
+		width: 50rem;
+		font-size: 16rem;
+	}
+}
+
+.cartItemContainer .itemDetailsContainer .totalItemPrice {
+	float: right;
+	margin-bottom: 10rem;
+	font-size: 12rem;
+
+	@include for-tablet-portrait-up {
+		font-size: 16rem;
+	}
+}

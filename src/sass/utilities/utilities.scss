@@ -1,0 +1,90 @@
+@mixin pagePadding {
+	padding: 10rem 20rem;
+}
+@mixin flexGrow {
+	flex-grow: 1;
+}
+@mixin flexAlignCenter {
+	display: flex;
+	align-items: center;
+}
+
+// https://itnext.io/writing-media-queries-with-sass-mixins-3ea591ea3ea4
+@mixin for-phone-only {
+	@media (max-width: 599px) {
+		@content;
+	}
+}
+@mixin for-tablet-portrait-up {
+	@media (min-width: 600px) {
+		@content;
+	}
+}
+@mixin for-tablet-landscape-up {
+	@media (min-width: 900px) {
+		@content;
+	}
+}
+@mixin for-laptop-up {
+	@media (min-width: 1024px) {
+		@content;
+	}
+}
+@mixin for-desktop-up {
+	@media (min-width: 1200px) {
+		@content;
+	}
+}
+@mixin for-big-desktop-up {
+	@media (min-width: 1440px) {
+		@content;
+	}
+}
+@mixin for-extra-big-desktop-up {
+	@media (min-width: 1700px) {
+		@content;
+	}
+}
+
+.heading {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 24rem;
+}
+
+.centerPageContent {
+	margin-left: auto;
+	margin-right: auto;
+	width: 90%;
+	min-height: 80vh;
+	padding-top: 15rem;
+	padding-bottom: 15rem;
+	position: relative;
+
+	@include for-tablet-landscape-up() {
+		width: 60%;
+	}
+	@include for-extra-big-desktop-up() {
+		width: 40%;
+	}
+}
+
+hr {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.imgSizing {
+	max-width: 100%;
+	height: inherit;
+	object-fit: cover;
+	object-position: center;
+	// margin-left: auto;
+	// margin-right: auto;
+}
+
+// https://stackoverflow.com/questions/25194631/is-it-possible-to-always-show-up-down-arrows-for-input-number
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+	opacity: 1;
+}

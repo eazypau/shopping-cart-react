@@ -1,0 +1,101 @@
+@use "../utilities/utilities.scss" as *;
+@use "../utilities/colors.scss" as *;
+
+.cardContainer {
+	// border: 1px solid #dee2e6;
+	background-color: #ffffffff;
+	padding: 10px 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	cursor: pointer;
+
+	&--soldOut {
+		@extend .cardContainer;
+		cursor: not-allowed;
+	}
+}
+
+:hover.cardContainer {
+	opacity: 0.8;
+}
+
+.cardContainer .productImgContainer {
+	height: 150px;
+	overflow: hidden;
+	display: flex;
+	justify-content: center;
+	// @include for-tablet-portrait-up {
+	// 	height: 150px;
+	// }
+	@include for-laptop-up {
+		height: 250px;
+	}
+}
+
+.cardContainer .soldOutContainer {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+	margin-top: -10px;
+
+	@include flexAlignCenter;
+}
+
+.soldOutContainer .soldOut {
+	font-size: 30px;
+	font-weight: 500;
+	opacity: 0.5;
+	padding: 0 10rem 0 10rem;
+	transform: rotate(-30deg);
+	color: $light-color;
+	background-color: black;
+	@include for-tablet-portrait-up {
+		font-size: 50px;
+	}
+}
+
+.cardTextContainer {
+	@include pagePadding;
+}
+
+.discount {
+	margin: 0 0 10px 0;
+	padding: 5px 10px;
+	background-color: $top-deals;
+	max-width: max-content;
+	color: white;
+	font-size: 12px;
+
+	@include for-tablet-portrait-up {
+		font-size: 16px;
+	}
+}
+
+.productTitle {
+	margin: 0;
+	// padding-top: 5px;
+	font-size: 15px;
+	font-weight: bold;
+
+	@include for-tablet-portrait-up {
+		font-size: 18px;
+	}
+}
+
+.productPrice {
+	margin: 0;
+	font-size: 12px;
+	font-weight: 500;
+
+	@include for-tablet-portrait-up {
+		font-size: 15px;
+	}
+}
+
+.lineThroughPrice {
+	text-decoration: line-through;
+	color: $medium-text-color;
+}

@@ -1,0 +1,34 @@
+
+.messageModalContainer {
+    display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	z-index: 20;
+	background-color: $transparent-color;
+}
+
+.messageModalContainer .messageModal {
+    width: 300px;
+	height: auto;
+	padding-top: 24rem;
+	padding-left: 32rem;
+	padding-right: 32rem;
+	opacity: 1;
+	background-color: $light-color;
+	border-radius: 10rem;
+	flex-direction: column;
+	// justify-content: center;
+
+	@include flexAlignCenter
+}
+
+.messageModal div p {
+	font-size: 28rem;
+	margin-top: 10rem;
+	margin-bottom: 24rem;
+	text-align: center;
+}
