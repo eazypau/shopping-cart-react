@@ -1,5 +1,5 @@
 <div>
-    <img src="/logo.png" alt="favicon" width="100"/>
+    <img src="https://github.com/eazypau/shopping-cart-react/blob/master/public/logo.png" alt="favicon" width="100"/>
 </div>
 
 # E-commerce shopping cart
