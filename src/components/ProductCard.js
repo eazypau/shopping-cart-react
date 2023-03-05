@@ -4,6 +4,17 @@ export default function ProductCard({ props, selectItem }) {
 	const selectedProduct = (id) => {
 		selectItem(id);
 	};
+	
+	const setDefaultImage = (e) => {
+		try {
+			// console.log(e);
+			e.target.onerror = null;
+			e.target.src =
+				"https://st3.depositphotos.com/23594922/31822/v/600/depositphotos_318221368-stock-illustration-missing-picture-page-for-website.jpg";
+		} catch (error) {
+			
+		}
+	};
 
 	return (
 		<div
@@ -13,7 +24,7 @@ export default function ProductCard({ props, selectItem }) {
 			}}
 		>
 			<div className="productImgContainer">
-				<img src={props.imgUrl} alt={props.name} className="imgSizing" />
+				<img src={props.imgUrl} alt={props.name} className="imgSizing" onError={(e) => setDefaultImage(e)} />
 			</div>
 			<div className="cardTextContainer">
 				{props.topDeals ? <p className="discount">Top Deals</p> : ""}
